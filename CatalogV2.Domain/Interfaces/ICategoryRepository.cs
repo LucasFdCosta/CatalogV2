@@ -6,8 +6,8 @@ namespace CatalogV2.Domain.Interfaces
     {
         Task<IEnumerable<Category>> GetCategoriesAsync();
         Task<Category> GetByIdAsync(int? id);
-        Task<Category> CreateAsync(Category Category);
-        Task<Category> UpdateAsync(Category Category);
-        Task<Category> RemoveAsync(Category Category);
+        Task<Category> CreateAsync(Category category);
+        Task<Category> UpdateAsync(Category category);
+        Task<Category> RemoveAsync(Category category);
     }
 }
