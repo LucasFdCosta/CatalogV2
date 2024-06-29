@@ -6,10 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="IoC\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Entities\" />
-  </ItemGroup>
-
 </Project>
