@@ -10,4 +10,11 @@
     <ProjectReference Include="..\CatalogV2.Domain\CatalogV2.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Mappings\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="DTOs\" />
+  </ItemGroup>
+
 </Project>
