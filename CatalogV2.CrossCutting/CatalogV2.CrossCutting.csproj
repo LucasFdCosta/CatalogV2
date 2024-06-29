@@ -12,8 +12,4 @@
     <ProjectReference Include="..\CatalogV2.Infrastructure\CatalogV2.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="IoC\" />
-  </ItemGroup>
-
 </Project>
