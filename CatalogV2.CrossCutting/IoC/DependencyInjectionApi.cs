@@ -14,8 +14,10 @@ namespace CatalogV2.CrossCutting.IoC
     {
         public static IServiceCollection AddInfrastructureApi(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(configuration.GetConnectionString("DefaultConnection"),
-                new MySqlServerVersion(new Version(8, 0, 29))));
+            var mySqlConnection = configuration.GetConnectionString("DefaultConnection");
+
+            services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(mySqlConnection,
+                ServerVersion.AutoDetect(mySqlConnection)));
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
