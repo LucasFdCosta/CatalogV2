@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CatalogV2.Application\CatalogV2.Application.csproj" />
+    <ProjectReference Include="..\CatalogV2.Domain\CatalogV2.Domain.csproj" />
+    <ProjectReference Include="..\CatalogV2.Infrastructure\CatalogV2.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
