@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CatalogV2.Api.Controllers
 {
     [ApiController]
-    [ApiVersion("2.0")]
+    [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     public class CategoriesController : ControllerBase
     {
@@ -31,7 +31,7 @@ namespace CatalogV2.Api.Controllers
             }
         }
 
-        [HttpGet("{id}", Name = "GetById")]
+        [HttpGet("{id}", Name = "GetCategory")]
         public async Task<ActionResult<IEnumerable<CategoryDTO>>> Get(int id)
         {
             var category = await _categoryService.GetById(id);
@@ -48,7 +48,7 @@ namespace CatalogV2.Api.Controllers
 
             await _categoryService.Add(categoryDto);
 
-            return new CreatedAtRouteResult("GetById", new { id = categoryDto.Id }, categoryDto);
+            return new CreatedAtRouteResult("GetCategory", new { id = categoryDto.Id }, categoryDto);
         }
 
         [HttpPut("{id}")]

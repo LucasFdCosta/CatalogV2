@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CatalogV2.Api.Controllers
 {
     [ApiController]
-    [ApiVersion("2.0")]
+    [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     public class ProductsController : ControllerBase
     {
@@ -24,7 +24,7 @@ namespace CatalogV2.Api.Controllers
             return Ok(produtos);
         }
 
-        [HttpGet("{id}", Name = "GetById")]
+        [HttpGet("{id}", Name = "GetProduct")]
         public async Task<ActionResult<ProductDTO>> GetById(int id)
         {
             var product = await _productService.GetById(id);
@@ -41,7 +41,7 @@ namespace CatalogV2.Api.Controllers
 
             await _productService.Add(productDto);
 
-            return new CreatedAtRouteResult("GetById", new { id = productDto.Id }, productDto);
+            return new CreatedAtRouteResult("GetProduct", new { id = productDto.Id }, productDto);
         }
 
         [HttpPut("{id}")]
@@ -55,7 +55,7 @@ namespace CatalogV2.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ProductDTO>> Put(int id)
+        public async Task<ActionResult<ProductDTO>> Delete(int id)
         {
             var productDto = await _productService.GetById(id);
 

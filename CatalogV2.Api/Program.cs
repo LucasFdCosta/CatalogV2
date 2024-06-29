@@ -13,12 +13,23 @@ builder.Services.AddInfrastructureApi(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v2", new OpenApiInfo { Title = "CatalogApiV2", Version = "v2" });
-}); ;
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "CatalogApiV2",
+        Description = "Second version of products and its categories API",
+        Contact = new OpenApiContact
+        {
+            Name = "Lucas",
+            Email = "lucas.co090869@gmail.com",
+            Url = new Uri("https://github.com/LucasFdCosta")
+        },
+    });
+});
 
 builder.Services.AddApiVersioning(options =>
 {
-    options.DefaultApiVersion = new ApiVersion(2, 0);
+    options.DefaultApiVersion = new ApiVersion(1, 0);
     options.AssumeDefaultVersionWhenUnspecified = true;
     options.ReportApiVersions = true;
     options.ApiVersionReader = ApiVersionReader.Combine(new UrlSegmentApiVersionReader());
